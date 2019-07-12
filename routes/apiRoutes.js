@@ -1,6 +1,8 @@
 var db = require("../models");
 
 module.exports = function(app) {
+    // login route tbd
+
     // route for posting info to the database
     app.post("/api/portfolio", function(req, res) {
         db.Portfolio.create(req.body).then(function(data) {

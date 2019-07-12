@@ -1,6 +1,7 @@
 $(document).ready(function() {
     import $ from "jquery";
     import main from './main';
+    import login from './login';
     import portfolio from './portfolio';
 
     // initialize the carousel
