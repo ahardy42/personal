@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    import $ from "jquery";
     import main from './main';
     import portfolio from './portfolio';
 
