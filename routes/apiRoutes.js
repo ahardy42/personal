@@ -3,40 +3,30 @@ var db = require("../models");
 module.exports = function(app) {
     // login route tbd
 
+    // route for getting info from database 
+    app.get("/api/portfolio", function(req, res) {
+        db.Portfolio.find({}, function(err, docs) {
+            if (err) {
+                console.log(err);
+            }
+            res.json(docs);
+        });
+    });
+
     // route for posting info to the database
     app.post("/api/portfolio", function(req, res) {
-        db.Portfolio.create(req.body).then(function(data) {
-            res.json(data);
-        }).catch(function(err) {
-            console.log(err);
-        });
+        // work to do
     });
 
     // route for updating database info
     app.put("/api/portfolio/:id", function(req, res) {
         var id = req.params.id;
-        db.Portfolio.update(req.body, {
-            where: {
-                id: id
-            }
-        }).then(function(data) {
-            res.json(data);
-        }).catch(function(err) {
-            console.log(err);
-        });
+        // work to do
     })
 
     // route for deleting a database entry
     app.delete("/api/portfolio/:id", function(req, res) {
         var id = req.params.id;
-        db.Portfolio.destroy({
-            where: {
-                id: id
-            }
-        }).then(function(data) {
-            res.json(data);
-        }).catch(function(err) {
-            console.log(err);
-        });
+        // work to do
     });
 }
