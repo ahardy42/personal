@@ -13,11 +13,18 @@ module.exports = function(app) {
     // route for portfolio page -- gets all db info and sends it!
     app.get("/portfolio", function (req, res) {
         // some stuff here
+        if (!req.user) {
+            res.sendFile(path.join(__dirname, "../dist/login.html"));
+        }
     });
 
     // route for specific portfolio piece
     app.get("/portfolio/:project", function (req, res) {
         // some more stuff here
+        if (!req.user) {
+            res.sendFile(path.join(__dirname, "../dist/login.html"));
+        }
+        
     });
 
 }
