@@ -1,10 +1,8 @@
 // ==============================================================================
 // DEPENDENCIES
 // ==============================================================================
-
+var mongoose = require("mongoose");
 var express = require("express");
-// requiring models so we can sync
-var db = require("./models");
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server
@@ -15,9 +13,7 @@ var app = express();
 
 // Sets an initial port. heroku uses the process.env.PORT option
 var PORT = process.env.PORT || 8080;
-
-// Requiring our models for syncing
-var db = require("./models");
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/personal";
 
 // loads static files to style and handle JS functionality on the front end
 app.use(express.static("public"));
@@ -38,9 +34,9 @@ require("./routes/apiRoutes.js")(app);
 // =============================================================================
 // LISTENER
 // =============================================================================
+mongoose.connect(MONGODB_URI);
 
-db.sequelize.sync({force: false}).then(function() {
-  app.listen(PORT, function() {
-    console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
-  });
+app.listen(PORT, function () {
+  console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });
+
