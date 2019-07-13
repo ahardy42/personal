@@ -8,25 +8,46 @@ module.exports = function(app) {
         db.Portfolio.find({}, function(err, docs) {
             if (err) {
                 console.log(err);
+            } else {
+                res.json(docs);
             }
-            res.json(docs);
         });
     });
 
-    // route for posting info to the database
+    // route for posting portfolio info to the database
     app.post("/api/portfolio", function(req, res) {
-        // work to do
+        var doc = req.body;
+        console.log("body", doc);
+        db.Portfolio.create(req.body, function(err, docs) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(docs);
+            }
+        });
     });
 
     // route for updating database info
     app.put("/api/portfolio/:id", function(req, res) {
         var id = req.params.id;
-        // work to do
-    })
+        db.Portfolio.updateOne({_id: id}, req.body, function(err, docs) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(docs);
+            }
+        });
+    });
 
     // route for deleting a database entry
     app.delete("/api/portfolio/:id", function(req, res) {
         var id = req.params.id;
-        // work to do
+        db.Portfolio.deleteOne({_id: id}, function(err, docs) {
+            if (err) {
+                console.log(err);
+            } else {
+                res.json(docs);
+            }
+        });
     });
 }
