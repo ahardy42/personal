@@ -15,7 +15,8 @@ $(document).ready(function() {
             title: $("#title").val().trim(),
             description: $("#description").val().trim(),
             gitUrl: $("#gitUrl").val().trim(),
-            projectUrl: $("#projectUrl").val().trim()
+            projectUrl: $("#projectUrl").val().trim(),
+            fileName: getFileName()
         };
 
         insertDocument(doc);
@@ -34,7 +35,7 @@ $(document).ready(function() {
         });
     });
 
-    $("body").on("click", ".edit", function() {
+    $("body").on("click", ".update", function() {
         var id = $(this).data("id");
         var row = $(`tr[data-id=${id}]`);
         var children = row.children();
@@ -62,10 +63,24 @@ $(document).ready(function() {
         // change the td to input with initial value = textContent
         var textContent = $(this).text();
         var column = $(this).data("col");
-        var input = $("<input>").attr({"type": "text", "data-col": column}).val(textContent);
-        $(this).after(input);
+        if ($(this).data("col") === "description") {
+            var textArea = $("<textarea>").attr({"type": "text", "data-col": column}).val(textContent);
+            $(this).after(textArea);
+        } else {
+            var input = $("<input>").attr({"type": "text", "data-col": column}).val(textContent);
+            $(this).after(input);
+        }
         $(this).remove();
     });
+
+    function getFileName() {
+        var files = document.getElementById('fileName').files;
+        var name;
+        for (i=0; i<files.length; i++) {
+            name = files[i].name;
+        }
+        return name;
+    }
 
     function insertDocument(docObject) {
         $.ajax({
@@ -88,9 +103,10 @@ $(document).ready(function() {
             var description = $("<td>").text(datum.description).attr("data-col", "description");
             var gitUrl = $("<td>").text(datum.gitUrl).attr("data-col", "gitUrl");
             var projectUrl = $("<td>").text(datum.projectUrl).attr("data-col", "projectUrl");
-            var editButton = makeButton(datum._id, "edit");
+            var fileName = $("<td>").text(datum.fileName).attr("data-col", "fileName");
+            var editButton = makeButton(datum._id, "update");
             var delButton = makeButton(datum._id, "delete");
-            row.append(id, title, description, gitUrl, projectUrl, editButton, delButton);
+            row.append(id, title, description, gitUrl, projectUrl, fileName, editButton, delButton);
             tBody.append(row);
         });
     }

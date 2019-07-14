@@ -7,7 +7,8 @@ var PortfolioSchema = new Schema({
     title: String,
     description: String,
     gitUrl: String,
-    projectUrl: String
+    projectUrl: String,
+    fileName: String
 });
 
 // creating a model from the schema
