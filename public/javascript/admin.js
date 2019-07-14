@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    // build a table w/ contents from the database
+    // build a table w/ contents from the database on page load
     $.ajax({
         method: "GET",
         url: "/api/portfolio"
@@ -8,7 +8,7 @@ $(document).ready(function() {
         buildTable(data);
     });
 
-    $("form").on("submit", function(event) {
+    $("#form-one").on("submit", function(event) {
         event.preventDefault();
 
         var doc = {
@@ -16,12 +16,20 @@ $(document).ready(function() {
             description: $("#description").val().trim(),
             gitUrl: $("#gitUrl").val().trim(),
             projectUrl: $("#projectUrl").val().trim(),
-            fileName: getFileName()
+            fileName: $("#filePath").val()
         };
-
+        document.getElementById("image").submit();
         insertDocument(doc);
     });
 
+    $("#fileName").on("input", function(e) {
+        var filePathInput = $("#filePath");
+        var fileName = e.currentTarget.files[0].name;
+        filePathInput.val("/images/"+fileName);
+        $("#fileLabel").addClass("active");
+    });
+
+    // delete this entry from the database
     $("body").on("click", ".delete", function() {
         var id = $(this).data("id");
 
@@ -35,6 +43,7 @@ $(document).ready(function() {
         });
     });
 
+    // update this entry with input values from the database
     $("body").on("click", ".update", function() {
         var id = $(this).data("id");
         var row = $(`tr[data-id=${id}]`);
@@ -47,7 +56,9 @@ $(document).ready(function() {
                 data[key] = val;
             }
         });
-        console.log(data);
+        if (data.length === 0) {
+            return;
+        }
         $.ajax({
             method: "PUT",
             url: "/api/portfolio/" + id,

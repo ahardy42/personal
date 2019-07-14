@@ -28,12 +28,33 @@
     <br>
     <br>
     <main>
+        <!-- form for the image file upload -->
         <div class="row">
             <div class="container green lighten-1">
                 <div class="card green lighten-1">
                     <div class="card-content">
                         <div class="row">
-                            <form class="col s12">
+                            <form class="col s12" id="image" action="/api/image" method="POST"
+                                encType="multipart/form-data">
+                                <div class="row">
+                                    <div class="input-field col s12 white-text">
+                                        <input id="fileName" type="file" name="imageFile">
+                                        <label for="fileName">Choose a project Image</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- form for the database submission -->
+        <div class="row">
+            <div class="container green lighten-1">
+                <div class="card green lighten-1">
+                    <div class="card-content">
+                        <div class="row">
+                            <form class="col s12" id="form-one">
                                 <div class="row">
                                     <div class="input-field col s12 white-text">
                                         <input id="title" type="text" class="validate">
@@ -60,12 +81,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="input-field col s12 white-text">
-                                        <input id="fileName" type="file">
-                                        <label for="fileName">Choose a project Image</label>
+                                        <input disabled id="filePath" type="text">
+                                        <label for="filePath" id="fileLabel">Image File Path</label>
                                     </div>
                                 </div>
                                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                        <i class="fas fa-pizza-slice"></i>
+                                    <i class="fas fa-pizza-slice"></i>
                                 </button>
                             </form>
                         </div>
@@ -73,24 +94,25 @@
                 </div>
             </div>
         </div>
+
         <div class="container">
             <div class="row">
                 <div class="col s12">
                     <table>
                         <thead>
-                          <tr>
-                              <th>Project ID</th>
-                              <th>Name</th>
-                              <th>Description</th>
-                              <th>gitUrl</th>
-                              <th>projectUrl</th>
-                              <th>fileName</th>
-                          </tr>
+                            <tr>
+                                <th>Project ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>gitUrl</th>
+                                <th>projectUrl</th>
+                                <th>fileName</th>
+                            </tr>
                         </thead>
                         <tbody id="tableBody">
-                          
+
                         </tbody>
-                      </table>
+                    </table>
                 </div>
             </div>
         </div>
@@ -99,7 +121,7 @@
         <div class="container">
             © 2019 Copyright Andy Hardy
             <a class="grey-text text-lighten-4 right" href="/">Main</a>
-        </div>  
+        </div>
     </footer>
     <script src="/javascript/admin.js"></script>
 </body>

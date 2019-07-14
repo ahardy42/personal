@@ -1,4 +1,5 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
     // login route tbd
@@ -17,13 +18,31 @@ module.exports = function(app) {
     // route for posting portfolio info to the database
     app.post("/api/portfolio", function(req, res) {
         var doc = req.body;
-        console.log("body", doc);
         db.Portfolio.create(req.body, function(err, docs) {
             if (err) {
                 console.log(err);
             } else {
                 res.json(docs);
             }
+        });
+    });
+
+    // post route for uploading an image file to the public/images folder
+    app.post("/api/image", function (req, res) {
+        if (req.files.length == 0) {
+            return res.status(400).send('No files were uploaded.');
+        }
+
+        // There will only be one file uploaded from the front end
+        var imageFile = req.files.imageFile;
+        var name = imageFile.name;
+
+        // Use the mv() method to place the file somewhere on your server
+        imageFile.mv(path.join(__dirname, "../public/images/"+name), function (err) {
+            if (err)
+                return res.status(500).send(err);
+
+            console.log("success!");
         });
     });
 

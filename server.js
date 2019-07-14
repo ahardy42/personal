@@ -3,6 +3,7 @@
 // ==============================================================================
 var mongoose = require("mongoose");
 var express = require("express");
+var fileUpload = require('express-fileupload');
 // ==============================================================================
 // EXPRESS CONFIGURATION
 // This sets up the basic properties for our express server
@@ -19,8 +20,10 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/personal";
 app.use(express.static("public"));
 
 // Sets up the Express app to handle data parsing
+app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 // ================================================================================
 // ROUTER
