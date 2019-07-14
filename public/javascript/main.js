@@ -126,7 +126,7 @@ eval("$(document).ready(function() {\n    var M = __webpack_require__(/*! materi
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var portfolio = __webpack_require__(/*! ./portfolio */ \"./src/portfolio.js\");\n// grab carousel information from the db and display it.\n\n$.ajax({\n    method: \"GET\",\n    url: \"/api/portfolio\"\n}).then(function (data) {\n    console.log(data);\n    var linkArray = portfolio.addLinks(data);\n    linkArray.forEach(function(link) {\n        $(\".carousel\").append(link);\n    });\n    // initialize the carousel\n    var options = {\n        numVisible: 3,\n        dist: -50\n    };\n    var instances = portfolio.init(options);\n    // instances[0].itemHeight = 400;\n    console.log(instances);\n});\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("var portfolio = __webpack_require__(/*! ./portfolio */ \"./src/portfolio.js\");\n// grab carousel information from the db and display it.\n\n$.ajax({\n    method: \"GET\",\n    url: \"/api/portfolio\"\n}).then(function (data) {\n    console.log(data);\n    var linkArray = portfolio.addLinks(data);\n    linkArray.forEach(function(link) {\n        $(\".carousel\").append(link);\n    });\n    // initialize the carousel\n    var options = {\n        numVisible: 3,\n        dist: -50\n    };\n    var instances = portfolio.init(options);\n});\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ }),
 

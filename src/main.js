@@ -16,6 +16,4 @@ $.ajax({
         dist: -50
     };
     var instances = portfolio.init(options);
-    // instances[0].itemHeight = 400;
-    console.log(instances);
 });
