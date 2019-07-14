@@ -32,9 +32,9 @@ require("./routes/apiRoutes.js")(app);
 
 
 // =============================================================================
-// LISTENER
+// LISTENERS
 // =============================================================================
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 app.listen(PORT, function () {
   console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);

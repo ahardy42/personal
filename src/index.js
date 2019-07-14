@@ -1,7 +1,7 @@
 $(document).ready(function() {
-    import $ from "jquery";
-    import login from './login';
-    import portfolio from './main';
+    var M = require("materialize-css");
+    // var $ = require("jquery");
+    var portfolio = require("./main");
 
     // initialize the carousel
     var options = {
@@ -18,4 +18,5 @@ $(document).ready(function() {
         portfolio.addLinks(data);
     });
 });
+
 

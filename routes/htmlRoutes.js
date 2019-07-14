@@ -10,6 +10,11 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, "../dist/login.html"));
     });
 
+    // route for admin
+    app.get("/admin", function (req, res) {
+        res.sendFile(path.join(__dirname, "../dist/admin.html"));
+    });
+
     // route for portfolio page -- gets all db info and sends it!
     app.get("/portfolio", function (req, res) {
         // some stuff here
