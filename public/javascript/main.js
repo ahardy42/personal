@@ -90,34 +90,10 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./main */ \"./src/main.js\");\n/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_main__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _portfolio__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./portfolio */ \"./src/portfolio.js\");\n\n\n\n$(\"#farts\").text(_portfolio__WEBPACK_IMPORTED_MODULE_1__[\"default\"].text);\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var main = {};\n\nmain.text = \"hello\";\n\nmodule.exports = main;\n\n//# sourceURL=webpack:///./src/main.js?");
-
-/***/ }),
-
-/***/ "./src/portfolio.js":
-/*!**************************!*\
-  !*** ./src/portfolio.js ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nvar portfolio = {};\n\nportfolio.text = \"wingnuts\";\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (portfolio);\n\n//# sourceURL=webpack:///./src/portfolio.js?");
+eval("throw new Error(\"Module parse failed: 'import' and 'export' may only appear at the top level (2:4)\\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\\n| $(document).ready(function() {\\n>     import $ from \\\"jquery\\\";\\n|     import login from './login';\\n|     import portfolio from './main';\");\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
