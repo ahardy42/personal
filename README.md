@@ -13,6 +13,17 @@ This site is a full stack site utilizing the MVC design pattern.
     - jQuery library to make DOM manipulation a bit easier.
 - C
     - stitched together with Node.js framework express.js to create a server
-    - middleware for authentication provided by ```<placeholder>```
+    - middleware for authentication provided by passport.js
 
-## blaaa
+## why full stack?
+
+I wanted to be able to edit my site on the fly, without having to re-deploy when I created a new project, or updated an old one.  So, I built this website with an admin page. Using my credentials I can login to access the admin page where I am able to edit the content of the portfolio carousel. 
+
+I created the api route to add the following items to the database:
+
+- title
+- description of the project
+- links for both the project, and for the github repo address
+- image file...
+
+the image file is uploaded to the server and express-fileupload middleware actually saves the image file to my server public/images location. Then, the database is updated with the correct path to access the image, and the img tag src attribute is set with the resulting path.  This way I can edit and upload my own photos on the fly as well. 
