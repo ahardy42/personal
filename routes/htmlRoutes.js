@@ -12,6 +12,9 @@ module.exports = function(app) {
 
     // route for admin
     app.get("/admin", function (req, res) {
+        if (!req.user) {
+            res.redirect("/login");
+        }
         res.sendFile(path.join(__dirname, "../dist/admin.html"));
     });
 
@@ -19,7 +22,7 @@ module.exports = function(app) {
     app.get("/portfolio", function (req, res) {
         // some stuff here
         if (!req.user) {
-            res.sendFile(path.join(__dirname, "../dist/login.html"));
+            res.redirect("/login");
         }
     });
 
@@ -27,7 +30,7 @@ module.exports = function(app) {
     app.get("/portfolio/:project", function (req, res) {
         // some more stuff here
         if (!req.user) {
-            res.sendFile(path.join(__dirname, "../dist/login.html"));
+            res.redirect("/login");
         }
         
     });

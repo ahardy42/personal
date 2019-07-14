@@ -16,7 +16,7 @@ $(document).ready(function () {
             url: "/api/login",
             data: data
         }).then(function (response) {
-            console.log(response);
+            window.location.assign("/admin");
         }).catch(function (err) {
             console.error(err);
         });
