@@ -115,7 +115,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("$(document).ready(function() {\n    var M = __webpack_require__(/*! materialize-css */ \"./node_modules/materialize-css/dist/js/materialize.js\");\n    // var $ = require(\"jquery\");\n    var portfolio = __webpack_require__(/*! ./main */ \"./src/main.js\");\n\n    // initialize the carousel\n    var options = {\n        numVisible: 3\n    };\n    portfolio.init(options);\n    \n    // grab carousel information from the db and display it.\n\n    $.ajax({\n        method: \"GET\",\n        url: \"/api/profile\"\n    }).then(function(data) {\n        portfolio.addLinks(data);\n    });\n});\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("$(document).ready(function() {\n    var M = __webpack_require__(/*! materialize-css */ \"./node_modules/materialize-css/dist/js/materialize.js\");\n    // var $ = require(\"jquery\");\n    var portfolio = __webpack_require__(/*! ./portfolio */ \"./src/portfolio.js\");\n    var main = __webpack_require__(/*! ./main */ \"./src/main.js\");\n\n});\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -123,11 +123,21 @@ eval("$(document).ready(function() {\n    var M = __webpack_require__(/*! materi
 /*!*********************!*\
   !*** ./src/main.js ***!
   \*********************/
-/*! exports provided: portfolio */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"portfolio\", function() { return portfolio; });\n// JS to create carousel and load content. \nvar M = __webpack_require__(/*! materialize-css */ \"./node_modules/materialize-css/dist/js/materialize.js\");\n\nvar portfolio = {\n    init: function (options) {\n        var elements = document.querySelectorAll(\".carousel\");\n        var instances = M.Carousel.init(elements, options);\n        return instances;\n    },\n    addLinks: function(array) {\n        var linkArray = [];\n        array.forEach(function(element) {\n            var link = document.createElement(\"a\");\n            var img = document.createElement(\"img\");\n            link.className = \"carousel-item\";\n            link.href = element.href;\n            img.src = element.imgUrl;\n            link.appendChild(img);\n            linkArray.push(link);\n        });\n        return linkArray;\n    }\n};\n\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("// initialize the carousel\nvar options = {\n    numVisible: 3\n};\nportfolio.init(options);\n\n// grab carousel information from the db and display it.\n\n$.ajax({\n    method: \"GET\",\n    url: \"/api/portfolio\"\n}).then(function(data) {\n    portfolio.addLinks(data);\n});\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/portfolio.js":
+/*!**************************!*\
+  !*** ./src/portfolio.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// JS to create carousel and load content. \nvar M = __webpack_require__(/*! materialize-css */ \"./node_modules/materialize-css/dist/js/materialize.js\");\n\nvar portfolio = {\n    init: function (options) {\n        var elements = document.querySelectorAll(\".carousel\");\n        var instances = M.Carousel.init(elements, options);\n        return instances;\n    },\n    addLinks: function(array) {\n        var linkArray = [];\n        array.forEach(function(element) {\n            var link = document.createElement(\"a\");\n            var img = document.createElement(\"img\");\n            link.className = \"carousel-item\";\n            link.href = element.href;\n            img.src = element.imgUrl;\n            link.appendChild(img);\n            linkArray.push(link);\n        });\n        return linkArray;\n    }\n};\n\nmodule.exports = portfolio;\n\n//# sourceURL=webpack:///./src/portfolio.js?");
 
 /***/ })
 
