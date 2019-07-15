@@ -18,6 +18,7 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/personal";
 
+
 // loads static files to style and handle JS functionality on the front end
 app.use(express.static("public"));
 
