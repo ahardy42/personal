@@ -25,7 +25,7 @@ $(document).ready(function() {
     $("#fileName").on("input", function(e) {
         var filePathInput = $("#filePath");
         var fileName = e.currentTarget.files[0].name;
-        filePathInput.val("/images/"+fileName);
+        filePathInput.val("https://andrewhardypersonalprojectimages.s3.us-east-2.amazonaws.com/"+fileName);
         $("#fileLabel").addClass("active");
     });
 

@@ -3,7 +3,6 @@
 // ==============================================================================
 var mongoose = require("mongoose");
 var express = require("express");
-var fileUpload = require('express-fileupload');
 var session = require("express-session");
 var passport = require("./config/passport");
 // ==============================================================================
@@ -28,7 +27,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Sets up the Express app to handle data parsing
-app.use(fileUpload());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 

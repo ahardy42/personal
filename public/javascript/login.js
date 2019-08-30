@@ -16,7 +16,9 @@ $(document).ready(function () {
             url: "/api/login",
             data: data
         }).then(function (response) {
-            window.location.assign("/admin");
+            console.log(response);
+            location.assign(`${location.origin}/admin`);
+            console.log("wtf");
         }).catch(function (err) {
             console.error(err);
         });
