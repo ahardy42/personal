@@ -1,12 +1,114 @@
-.about {
-    margin: 2em 0;
+.about-card {
+    height: 100vh;
+}
+
+#nav-mobile {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+}
+
+#image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.parallax-img-wrapper {
+    height: 100vh;
+}
+
+#parallax-1 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/ahardy42_background_1.JPG") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#parallax-2 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/IMG_3529.JPG") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#parallax-3 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/ahardy42_background_3.JPG") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-links > li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer-links > li > a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    min-width: 60%;
+    font-size: 24px;
+    margin-left: 10px;
+    padding: 5px;
 }
 
 .carousel {
-    min-height: 500px
+    min-height: 500px;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.card-reveal > p {
+    text-align: justify;
+}
+
+.link-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-div > a > i {
+    font-size: 3em;
+    margin-bottom: 10px
 }
 
 .carousel-item {
+    opacity: 1 !important;
     min-height: 400px;
     min-width: 400px
+}
+
+@media only screen and (max-width: 901px) {
+    nav {
+        height: 100px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer-links > li > a {
+        width: 100%;
+    }
+    .card-reveal {
+        width: 80% !important;
+        left: 10% !important;
+    }
 }
