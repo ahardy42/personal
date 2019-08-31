@@ -13,7 +13,8 @@ $.ajax({
     // initialize the carousel
     var options = {
         numVisible: 3,
-        dist: -50
+        dist: -50,
+        indicators: true
     };
     var instances = portfolio.init(options);
 });

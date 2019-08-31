@@ -41,6 +41,8 @@ var portfolio = {
             description.textContent = element.description;
             reveal.appendChild(description);
             // build the links out
+            var linkDiv = document.createElement("div");
+            linkDiv.classList.add("link-div");
             var gitLink = document.createElement("a");
             gitLink.innerHTML = "<i class=\"fab fa-github\"></i>";
             gitLink.href = element.gitUrl;
@@ -50,8 +52,9 @@ var portfolio = {
             projectLink.href = element.projectUrl;
             projectLink.target = "_blank";
             // attach links to card reveal
-            reveal.appendChild(gitLink);
-            reveal.appendChild(projectLink);
+            linkDiv.appendChild(gitLink);
+            linkDiv.appendChild(projectLink);
+            reveal.appendChild(linkDiv);
             card.appendChild(cardImage);
             card.appendChild(content);
             card.appendChild(reveal);

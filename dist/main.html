@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Andy Hardy | developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="/style/main.css" type="text/css" />
@@ -15,28 +16,48 @@
 <body>
     <nav class="green lighten-1">
         <div class="nav-wrapper container green lighten-1">
-            <a href="#" class="brand-logo">Andy Hardy</a>
-            <ul id="nav-mobile" class="right">
-                <li><a href="mailto:aohardy@gmail.com" target="_blank"><i class="fas fa-address-card"></i></a></li>
-                <li><a href="https://www.linkedin.com/in/andrew-hardy-13a9009/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                <li><a href="https://github.com/ahardy42" target="_blank"><i class="fab fa-github"></i></a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-            </ul>
+            <div class="row">
+                <a href="#about" class="brand-logo">Andy Hardy</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="https://ahardy42.s3.us-east-2.amazonaws.com/Resume_Andy_Hardy.pdf" target="_blank"
+                            title="download my resume!"><i class="fas fa-file"></i></a></li>
+                    <li><a href="mailto:aohardy@gmail.com" target="_blank"><i class="fas fa-address-card"
+                                title="send me an email!"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/andrew-hardy-13a9009/" target="_blank"
+                            title="find me on linkedin"><i class="fab fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/ahardy42" target="_blank" title="see my GitHub profile"><i
+                                class="fab fa-github"></i></a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col s12" id="nav-mobile">
+                    <ul class="hide-on-large-only">
+                        <li><a href="https://ahardy42.s3.us-east-2.amazonaws.com/Resume_Andy_Hardy.pdf" target="_blank"
+                                title="download my resume!"><i class="fas fa-file"></i></a></li>
+                        <li><a href="mailto:aohardy@gmail.com" target="_blank"><i class="fas fa-address-card"
+                                    title="send me an email!"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/andrew-hardy-13a9009/" target="_blank" title="find me on linkedin"><i
+                                    class="fab fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/ahardy42" target="_blank" title="see my GitHub profile"><i
+                                    class="fab fa-github"></i></a></li>
+                        <li class="hide-on-small-only"><a href="#portfolio">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </nav>
-    <br>
-    <br>
     <!-- header about me -->
     <main>
-        <div class="row center-align">
-            <div class="col offset-s4 s4">
+        <div class="row center-align parallax-img-wrapper" id="parallax-1">
+            <div class="col offset-m4 m4 offset-s2 s8 circle" id="image-wrapper">
                 <img class="responsive-img circle" src="images/profile_picture.png">
             </div>
         </div>
-        <div class="container">
+        <div class="container" id="about">
             <h1 class="header-text center green-text">About Me</h1>
         </div>
-        <div class="row">
+        <div class="row valign-wrapper about-card">
             <div class="col offset-m1 m10 s12 container">
                 <div class="card green lighter-1">
                     <div class="card-content white-text">
@@ -57,7 +78,12 @@
                         </div>
                     </div>
                 </div>
-                <br>
+            </div>
+        </div>
+        <div class="row parallax-img-wrapper" id="parallax-2">
+        </div>
+        <div class="row valign-wrapper about-card">
+            <div class="col offset-m1 m10 s12 container">
                 <div class="card green lighter-1">
                     <div class="card-content white-text">
                         <div class="row">
@@ -79,32 +105,33 @@
                 </div>
             </div>
         </div>
-        <div class="container" id="portfolio">
+        <div class="container">
             <h1 class="header-text center green-text">Portfolio</h1>
         </div>
-        <!-- carousel goes here -->
-        <div class="carousel">
-            <!-- content built with JS -->
+        <div class="row parallax-img-wrapper" id="parallax-3">
+            <div class="container" id="portfolio">
+                <!-- carousel goes here -->
+                <div class="carousel">
+                    <!-- content built with JS -->
+                </div>
+            </div>
         </div>
     </main>
     <footer class="page-footer green lighten-1">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Check out my professional links</h5>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <ul>
-                        <li><a href="mailto:aohardy@gmail.com" target="_blank"><i class="fas fa-address-card"></i></a></li>
-                        <li><a href="https://www.linkedin.com/in/andrew-hardy-13a9009/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
-                        <li><a href="https://github.com/ahardy42" target="_blank"><i class="fab fa-github"></i></a></li>
+                <div class="col-12">
+                    <ul class="footer-links">
+                        <li><a href="mailto:aohardy@gmail.com" target="_blank"><span class="white-text">aohardy@gmail.com</span><i class="fas fa-address-card right-align white-text"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/andrew-hardy-13a9009/" target="_blank"><span class="white-text">LinkedIn</span><i class="fab fa-linkedin right-align white-text"></i></a></li>
+                        <li><a href="https://github.com/ahardy42" target="_blank"><span class="white-text">GitHub</span><i class="fab fa-github white-text"></i></a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2019 Copyright Text
+                © 2019 Andy Hardy
                 <a class="grey-text text-lighten-4 right" href="/admin">Admin</a>
             </div>
         </div>
