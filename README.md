@@ -26,4 +26,4 @@ I created the api route to add the following items to the database:
 - links for both the project, and for the github repo address
 - image file...
 
-the image file is uploaded to the server and express-fileupload middleware actually saves the image file to my server public/images location. Then, the database is updated with the correct path to access the image, and the img tag src attribute is set with the resulting path.  This way I can edit and upload my own photos on the fly as well. 
+the image file is uploaded to an AWS S3 bucket using multer / multerS3 and the AWS-SDK packages. Then, the mongoDB database is updated with the correct path to access the image from the bucket, and the img tag src attribute is set with the resulting path.  This way I can edit and upload my own photos on the fly as well. 
