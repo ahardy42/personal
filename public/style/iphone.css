@@ -1,0 +1,16 @@
+.parallax-img-wrapper > img {
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+#parallax-1 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/ahardy42_background_1.JPG") center center;
+}
+
+#parallax-2 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/IMG_3529.JPG") center center;
+}
+
+#parallax-3 {
+    background: url("https://ahardy42.s3.us-east-2.amazonaws.com/ahardy42_background_3.JPG") center center;
+}
