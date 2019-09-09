@@ -1,9 +1,10 @@
 var portfolio = require("./portfolio");
 // grab carousel information from the db and display it.
 
-if (navigator.platform === "iPhone") {
+var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+if (iOS) {
     var head = $("head");
-    console.log(head.children("link:last"));
     head.children("link:last").after("<link rel='stylesheet' href='/style/iphone.css' type='text/css' />");
 }
 
