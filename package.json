@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/ahardy42/personal#readme",
   "dependencies": {
-    "aws-sdk": "^2.520.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^3.0.6",
     "concurrently": "^4.1.2",
     "dotenv": "^8.1.0",
